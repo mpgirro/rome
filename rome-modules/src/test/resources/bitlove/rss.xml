@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:bitlove="http://bitlove.org" version="2.0">
+    <channel>
+        <title>Lorem Ipsum</title>
+        <link>http://example.org</link>
+        <description>Lorem Ipsum</description>
+        <item>
+            <title>Lorem Ipsum</title>
+            <link>http://example.org/episode1</link>
+            <description>Lorem Ipsum</description>
+            <enclosure
+                    url="http://example.org/episode1.m4a"
+                    length="78589133"
+                    type="audio/mp4"
+                    bitlove:guid="6afe059f5b2ff7ba5590d5eb54be6c24" />
+        </item>
+    </channel>
+</rss>

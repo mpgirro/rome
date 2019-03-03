@@ -15,10 +15,13 @@
  */
 package com.rometools.modules.bitlove.modules;
 
+import com.rometools.rome.feed.CopyFrom;
+import com.rometools.rome.feed.module.Module;
+
 /**
  * This is a ROME module that provides support for the <a href="http://bitlove.org">http://bitlove.org</a> namespace.
  */
-public interface BitloveModule {
+public interface BitloveModule extends Module, CopyFrom {
 
     String URI = "http://bitlove.org";
 

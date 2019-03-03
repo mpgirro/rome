@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:bitlove="http://bitlove.org">
+    <title>Lorem Ipsum</title>
+    <link href="http://example.org"/>
+    <entry>
+        <title>Lorem Ipsum</title>
+        <link href="http://example.org/episode1"/>
+        <link rel="enclosure"
+              href="http://example.org/episode1.m4a"
+              bitlove:guid="6afe059f5b2ff7ba5590d5eb54be6c24"/>
+    </entry>
+</feed>

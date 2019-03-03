@@ -3,6 +3,7 @@ package com.rometools.modules.bitlove;
 import com.rometools.modules.AbstractTestCase;
 import com.rometools.modules.bitlove.io.BitloveGenerator;
 import com.rometools.modules.bitlove.modules.BitloveModule;
+import com.rometools.rome.feed.synd.SyndEntry;
 import com.rometools.rome.feed.synd.SyndFeed;
 import com.rometools.rome.io.SyndFeedInput;
 import com.rometools.rome.io.SyndFeedOutput;
@@ -40,7 +41,8 @@ public class BitloveGeneratorTest extends AbstractTestCase {
 
         final SyndFeedInput input = new SyndFeedInput();
         final SyndFeed feed = input.build(new XmlReader(new File(getTestFile("bitlove/rss.xml")).toURI().toURL()));
-        feed.getModule(BitloveModule.URI);
+        final SyndEntry entry = feed.getEntries().get(0);
+        entry.getModule(BitloveModule.URI);
         final SyndFeedOutput output = new SyndFeedOutput();
         final StringWriter writer = new StringWriter();
         output.output(feed, writer);
@@ -60,7 +62,8 @@ public class BitloveGeneratorTest extends AbstractTestCase {
 
         final SyndFeedInput input = new SyndFeedInput();
         final SyndFeed feed = input.build(new XmlReader(new File(getTestFile("bitlove/atom.xml")).toURI().toURL()));
-        feed.getModule(BitloveModule.URI);
+        final SyndEntry entry = feed.getEntries().get(0);
+        entry.getModule(BitloveModule.URI);
         final SyndFeedOutput output = new SyndFeedOutput();
         final StringWriter writer = new StringWriter();
         output.output(feed, writer);

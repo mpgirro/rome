@@ -50,7 +50,7 @@ public class BitloveModuleImpl
     }
 
     @Override
-    public void copyFrom(final CopyFrom obj) {
+    public void copyFrom(CopyFrom obj) {
         final BitloveModule bitlove = (BitloveModule) obj;
         this.setGuid(bitlove.getGuid());
     }

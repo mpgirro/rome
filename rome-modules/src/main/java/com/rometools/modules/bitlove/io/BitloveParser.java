@@ -39,29 +39,7 @@ public class BitloveParser implements ModuleParser {
 
     @Override
     public Module parse(Element element, Locale locale) {
-
         BitloveModule bitlove = null;
-
-        /*
-        // in RSS 2.0 feeds, the Bitlove GUID attribute is on the enclosure elements of an item
-        if (element.getName().equals("item")) {
-            final Element enclosure = element.getChild("enclosure");
-            if (enclosure != null) {
-                mod = fromElement(enclosure);
-            }
-        }
-
-        // in Atom feeds, the Bitlove GUID attribute is on the link element with the <enclosure> attribute of an entry
-        if (element.getName().equals("entry")) {
-            final List<Element> links = element.getChildren("link", Namespace.getNamespace(new AtomModuleParser().getNamespaceUri()));
-            for (Element link : links) {
-                final Attribute rel = link.getAttribute("rel");
-                if (rel != null && rel.getValue() != null && rel.getValue().equals("enclosure")) {
-                    mod = fromElement(link);
-                }
-            }
-        }
-        */
 
         // in RSS 2.0 feeds, the Bitlove GUID attribute is on the enclosure elements of an item
         if (element != null && element.getName().equals("enclosure")) {

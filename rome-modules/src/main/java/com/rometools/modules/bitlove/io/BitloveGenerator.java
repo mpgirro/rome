@@ -62,13 +62,7 @@ public class BitloveGenerator implements ModuleGenerator {
                 if (rel != null && rel.getValue() != null && rel.getValue().equals("enclosure")) {
                     generateGuid(bitlove.getGuid(), element);
                 }
-
             }
-            /*
-            if (element.getName().equals("item") || element.getName().equals("entry")) {
-                generateGuid(bitlove.getGuid(), element);
-            }
-            */
         }
     }
 

@@ -44,7 +44,6 @@ public class BitloveParserTest extends AbstractTestCase {
 
         assertNotNull(bitlove);
         assertEquals("6afe059f5b2ff7ba5590d5eb54be6c24", bitlove.getGuid());
-
     }
 
     public void testParseAtom() throws Exception {
@@ -58,7 +57,6 @@ public class BitloveParserTest extends AbstractTestCase {
 
         assertNotNull(bitlove);
         assertEquals("6afe059f5b2ff7ba5590d5eb54be6c24", bitlove.getGuid());
-
     }
 
     public void testGetNamespaceUri() {

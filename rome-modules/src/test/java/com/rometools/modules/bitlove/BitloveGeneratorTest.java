@@ -48,13 +48,11 @@ public class BitloveGeneratorTest extends AbstractTestCase {
         output.output(feed, writer);
 
         final String xml = writer.toString();
-        assertTrue(xml.contains("xmlns:bitlove=\"http://bitlove.org\""));
-        assertTrue(xml.contains("bitlove:guid=\"6afe059f5b2ff7ba5590d5eb54be6c24\""));
-
         System.out.println(xml);
-
         log.debug("{}", writer);
 
+        assertTrue(xml.contains("xmlns:bitlove=\"http://bitlove.org\""));
+        assertTrue(xml.contains("bitlove:guid=\"6afe059f5b2ff7ba5590d5eb54be6c24\""));
     }
 
     public void testGenerateAtom() throws Exception {
@@ -70,13 +68,11 @@ public class BitloveGeneratorTest extends AbstractTestCase {
         output.output(feed, writer);
 
         final String xml = writer.toString();
-        assertTrue(xml.contains("xmlns:bitlove=\"http://bitlove.org\""));
-        assertTrue(xml.contains("bitlove:guid=\"6afe059f5b2ff7ba5590d5eb54be6c24\""));
-
         System.out.println(xml);
-
         log.debug("{}", writer);
 
+        assertTrue(xml.contains("xmlns:bitlove=\"http://bitlove.org\""));
+        assertTrue(xml.contains("bitlove:guid=\"6afe059f5b2ff7ba5590d5eb54be6c24\""));
     }
 
     public void testGetNamespaceUri() {

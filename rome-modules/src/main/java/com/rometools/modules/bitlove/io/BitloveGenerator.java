@@ -18,6 +18,7 @@ package com.rometools.modules.bitlove.io;
 import com.rometools.modules.bitlove.modules.BitloveModule;
 import com.rometools.rome.feed.module.Module;
 import com.rometools.rome.io.ModuleGenerator;
+import org.jdom2.Attribute;
 import org.jdom2.Element;
 import org.jdom2.Namespace;
 
@@ -52,10 +53,22 @@ public class BitloveGenerator implements ModuleGenerator {
     @Override
     public void generate(Module module, Element element) {
         if (module instanceof BitloveModule) {
-            final BitloveModule m = (BitloveModule) module;
-            if (element.getName().equals("item") || element.getName().equals("entry")) {
-                generateGuid(m.getGuid(), element);
+            final BitloveModule bitlove = (BitloveModule) module;
+            if (element != null && element.getName().equals("enclosure")) {
+                generateGuid(bitlove.getGuid(), element);
             }
+            if (element != null && element.getName().equals("link")) {
+                final Attribute rel = element.getAttribute("rel");
+                if (rel != null && rel.getValue() != null && rel.getValue().equals("enclosure")) {
+                    generateGuid(bitlove.getGuid(), element);
+                }
+
+            }
+            /*
+            if (element.getName().equals("item") || element.getName().equals("entry")) {
+                generateGuid(bitlove.getGuid(), element);
+            }
+            */
         }
     }
 

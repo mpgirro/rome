@@ -15,7 +15,6 @@
  */
 package com.rometools.modules.bitlove.io;
 
-import com.rometools.modules.atom.io.AtomModuleParser;
 import com.rometools.modules.bitlove.modules.BitloveModule;
 import com.rometools.modules.bitlove.modules.BitloveModuleImpl;
 import com.rometools.rome.feed.module.Module;
@@ -24,7 +23,6 @@ import org.jdom2.Attribute;
 import org.jdom2.Element;
 import org.jdom2.Namespace;
 
-import java.util.List;
 import java.util.Locale;
 
 /**
@@ -42,7 +40,7 @@ public class BitloveParser implements ModuleParser {
     @Override
     public Module parse(Element element, Locale locale) {
 
-        BitloveModule mod = null;
+        BitloveModule bitlove = null;
 
         /*
         // in RSS 2.0 feeds, the Bitlove GUID attribute is on the enclosure elements of an item
@@ -66,29 +64,29 @@ public class BitloveParser implements ModuleParser {
         */
 
         // in RSS 2.0 feeds, the Bitlove GUID attribute is on the enclosure elements of an item
-        if (element.getName().equals("enclosure")) {
-            mod = fromElement(element);
+        if (element != null && element.getName().equals("enclosure")) {
+            bitlove = fromElement(element);
         }
 
         // in Atom feeds, the Bitlove GUID attribute is on the link element with the <enclosure> attribute of an entry
-        if (element.getName().equals("link")) {
+        if (element != null && element.getName().equals("link")) {
             final Attribute rel = element.getAttribute("rel");
             if (rel != null && rel.getValue() != null && rel.getValue().equals("enclosure")) {
-                mod = fromElement(element);
+                bitlove = fromElement(element);
             }
         }
 
-        return mod;
+        return bitlove;
     }
 
     private BitloveModule fromElement(Element element) {
-        BitloveModule mod = null;
+        BitloveModule bitlove = null;
         final Attribute guid = element.getAttribute(BitloveAttribute.GUID, NS);
         if (guid != null && guid.getValue() != null) {
-            mod = new BitloveModuleImpl();
-            mod.setGuid(guid.getValue().trim());
+            bitlove = new BitloveModuleImpl();
+            bitlove.setGuid(guid.getValue().trim());
         }
-        return mod;
+        return bitlove;
     }
 
 }

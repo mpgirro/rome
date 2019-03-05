@@ -23,10 +23,23 @@ import com.rometools.rome.feed.module.Module;
  */
 public interface BitloveModule extends Module, CopyFrom {
 
+    /**
+     * The URI of the namespace. (<a href="http://bitlove.org">http://bitlove.org</a>)
+     */
     String URI = "http://bitlove.org";
 
+    /**
+     * Get the Bitlove GUID.
+     *
+     * @return The Bitlove GUID.
+     */
     String getGuid();
 
+    /**
+     * Set the Bitlove GUID.
+     *
+     * @param guid The Bitlove GUID.
+     */
     void setGuid(String guid);
 
 }

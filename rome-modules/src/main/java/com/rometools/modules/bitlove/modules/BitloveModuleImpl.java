@@ -51,8 +51,8 @@ public class BitloveModuleImpl
 
     @Override
     public void copyFrom(final CopyFrom obj) {
-        final BitloveModule mod = (BitloveModule) obj;
-        this.setGuid(mod.getGuid());
+        final BitloveModule bitlove = (BitloveModule) obj;
+        this.setGuid(bitlove.getGuid());
     }
 
     @Override
@@ -62,9 +62,9 @@ public class BitloveModuleImpl
 
     @Override
     public Object clone() throws CloneNotSupportedException {
-        final BitloveModuleImpl mod = new BitloveModuleImpl();
-        mod.setGuid(this.getGuid());
-        return mod;
+        final BitloveModule bitlove = new BitloveModuleImpl();
+        bitlove.setGuid(this.getGuid());
+        return bitlove;
     }
 
     @Override
